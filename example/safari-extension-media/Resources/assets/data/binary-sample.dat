@@ -1,0 +1,24 @@
+MEDIA_SHOWCASE_BINARY_DATA_SAMPLE_v4.7.3
+================================================
+
+This is a sample binary data file for testing purposes.
+It contains various data types and structures to test
+the plugin's capability to handle different file types.
+
+HEX DATA SAMPLE:
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F
+20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F
+
+ENCODED STRINGS:
+Base64: TWVkaWEgU2hvd2Nhc2UgUHJv
+UTF-8: Media Showcase Pro
+ASCII: MEDIA_SHOWCASE_PRO
+
+SAMPLE CHECKSUMS:
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA1: da39a3ee5e6b4b0d3255bfef95601890afd80709
+CRC32: 00000000
+
+END OF SAMPLE DATA
+================================================

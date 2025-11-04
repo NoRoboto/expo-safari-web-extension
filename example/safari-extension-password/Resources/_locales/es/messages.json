@@ -1,0 +1,56 @@
+{
+  "extensionName": {
+    "message": "Gestor SecurePass"
+  },
+  "extensionDescription": {
+    "message": "Gestor de contraseñas seguro para Safari con capacidades de auto-completado"
+  },
+  "browserActionTitle": {
+    "message": "Gestor SecurePass"
+  },
+  "fillFormCommand": {
+    "message": "Rellenar formulario de inicio"
+  },
+  "generatePasswordCommand": {
+    "message": "Generar contraseña segura"
+  },
+  "loginSaved": {
+    "message": "Credenciales guardadas de forma segura"
+  },
+  "passwordGenerated": {
+    "message": "Contraseña fuerte generada"
+  },
+  "formFilled": {
+    "message": "Formulario rellenado exitosamente"
+  },
+  "noCredentials": {
+    "message": "No hay credenciales guardadas para este sitio"
+  },
+  "unlock": {
+    "message": "Desbloquear"
+  },
+  "lock": {
+    "message": "Bloquear"
+  },
+  "generate": {
+    "message": "Generar"
+  },
+  "save": {
+    "message": "Guardar"
+  },
+  "cancel": {
+    "message": "Cancelar"
+  },
+  "username": {
+    "message": "Usuario"
+  },
+  "password": {
+    "message": "Contraseña"
+  },
+  "website": {
+    "message": "Sitio web"
+  },
+  "settings": {
+    "message": "Configuración"
+  }
+}

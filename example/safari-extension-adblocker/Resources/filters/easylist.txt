@@ -1,0 +1,31 @@
+! AdBlock Pro Filter List
+! Version: 2.1.0
+! Last modified: 2025-10-02
+
+! Common ad patterns
+##.advertisement
+##.ad-banner
+##.ads
+##[id*="advertisement"]
+##[class*="ad-"]
+
+! Social media widgets
+##.fb-like-box
+##.twitter-widget
+##.social-share
+
+! Popup blockers
+###popup-overlay
+##.modal-backdrop
+##.overlay-ad
+
+! Tracking scripts
+||googletagmanager.com^
+||google-analytics.com^
+||facebook.com/tr^
+||doubleclick.net^
+
+! Video ads
+###video-ad-container
+##.video-advertisement
+##.preroll-ad

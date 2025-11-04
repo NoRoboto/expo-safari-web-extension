@@ -1,0 +1,25 @@
+{
+  "video_formats": ["mp4", "webm", "avi", "mov", "mkv"],
+  "audio_formats": ["mp3", "wav", "ogg", "m4a", "flac"],
+  "image_formats": ["jpg", "jpeg", "png", "gif", "svg", "webp"],
+  "font_formats": ["ttf", "otf", "woff", "woff2"],
+  
+  "media_settings": {
+    "default_volume": 0.7,
+    "auto_play": false,
+    "loop_video": false,
+    "show_controls": true,
+    "preload": "metadata"
+  },
+  
+  "ui_themes": {
+    "dark": { "bg": "#000", "text": "#fff", "border": "#333" },
+    "light": { "bg": "#fff", "text": "#000", "border": "#ccc" },
+    "retro": { "bg": "#000", "text": "#00ff00", "border": "#00ff00" }
+  },
+  
+  "supported_codecs": {
+    "video": ["h264", "vp8", "vp9", "av1"],
+    "audio": ["aac", "mp3", "opus", "vorbis"]
+  }
+}

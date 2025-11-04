@@ -1,0 +1,11 @@
+id,type,name,format,size,duration,created,modified,tags
+1,video,demo-video-1.mp4,mp4,15728640,120,2024-01-01,2024-01-15,"demo,test,mp4"
+2,video,demo-video-2.webm,webm,12582912,60,2024-01-02,2024-01-16,"demo,webm,hd"
+3,audio,sample-audio.mp3,mp3,5242880,180,2024-01-03,2024-01-17,"audio,mp3,sample"
+4,audio,high-quality.wav,wav,25165824,240,2024-01-04,2024-01-18,"audio,wav,hq"
+5,image,landscape.png,png,2621440,0,2024-01-05,2024-01-19,"image,png,landscape"
+6,image,portrait.jpg,jpg,8388608,0,2024-01-06,2024-01-20,"image,jpg,portrait"
+7,font,custom-font.ttf,ttf,1048576,0,2024-01-07,2024-01-21,"font,ttf,custom"
+8,font,web-font.woff2,woff2,524288,0,2024-01-08,2024-01-22,"font,woff2,web"
+9,svg,icon-set.svg,svg,65536,0,2024-01-09,2024-01-23,"svg,icons,vector"
+10,data,config.json,json,4096,0,2024-01-10,2024-01-24,"data,json,config"

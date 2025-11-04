@@ -1,0 +1,56 @@
+{
+  "extensionName": {
+    "message": "SecurePass Manager"
+  },
+  "extensionDescription": {
+    "message": "Secure password manager for Safari with auto-fill capabilities"
+  },
+  "browserActionTitle": {
+    "message": "SecurePass Manager"
+  },
+  "fillFormCommand": {
+    "message": "Fill login form"
+  },
+  "generatePasswordCommand": {
+    "message": "Generate secure password"
+  },
+  "loginSaved": {
+    "message": "Login credentials saved securely"
+  },
+  "passwordGenerated": {
+    "message": "Strong password generated"
+  },
+  "formFilled": {
+    "message": "Form filled successfully"
+  },
+  "noCredentials": {
+    "message": "No saved credentials for this site"
+  },
+  "unlock": {
+    "message": "Unlock"
+  },
+  "lock": {
+    "message": "Lock"
+  },
+  "generate": {
+    "message": "Generate"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "username": {
+    "message": "Username"
+  },
+  "password": {
+    "message": "Password"
+  },
+  "website": {
+    "message": "Website"
+  },
+  "settings": {
+    "message": "Settings"
+  }
+}

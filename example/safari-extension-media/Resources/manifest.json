@@ -1,0 +1,79 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "4.7.3",
+  "default_locale": "en",
+  
+  "background": {
+    "scripts": [
+      "js/utils.js",
+      "js/media-processor.js", 
+      "js/file-manager.js",
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "js/content.js",
+        "js/media-detector.js",
+        "js/ui-renderer.js"
+      ],
+      "css": [
+        "css/inject.css",
+        "css/media-player.css",
+        "css/animations.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardWrite",
+    "contextMenus",
+    "notifications"
+  ],
+  
+  "browser_action": {
+    "default_popup": "html/popup.html",
+    "default_title": "__MSG_browserActionTitle__",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png", 
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  
+  "options_ui": {
+    "page": "html/options.html",
+    "open_in_tab": true
+  },
+  
+  "web_accessible_resources": [
+    "assets/images/*",
+    "assets/videos/*",
+    "assets/audio/*", 
+    "assets/fonts/*",
+    "assets/svg/*",
+    "assets/data/*",
+    "my/folder/images/showcase/*",
+    "_locales/*/messages.json",
+    "css/*",
+    "html/player.html",
+    "html/gallery.html"
+  ]
+}

@@ -1,0 +1,75 @@
+/* QuickTranslate UI Styles */
+
+#quicktranslate-button {
+    font-family: monospace !important;
+    background: white !important;
+    color: black !important;
+    border: 1px dashed black !important;
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    z-index: 999999 !important;
+    position: absolute !important;
+    animation: quicktranslate-fadeIn 0.2s ease-in;
+}
+
+#quicktranslate-button:hover {
+    background: #f0f0f0 !important;
+}
+
+#quicktranslate-popup {
+    font-family: monospace !important;
+    background: white !important;
+    color: black !important;
+    border: 2px dashed black !important;
+    z-index: 1000000 !important;
+    position: fixed !important;
+    animation: quicktranslate-slideIn 0.3s ease-out;
+}
+
+@keyframes quicktranslate-fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes quicktranslate-slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.quicktranslate-highlight {
+    background: yellow !important;
+    animation: quicktranslate-pulse 0.5s ease-in-out;
+}
+
+@keyframes quicktranslate-pulse {
+    0% { background: yellow !important; }
+    50% { background: #ffff80 !important; }
+    100% { background: yellow !important; }
+}
+
+.quicktranslate-loading {
+    color: #666 !important;
+    font-style: italic !important;
+}
+
+.quicktranslate-error {
+    color: #ff0000 !important;
+}
+
+.quicktranslate-success {
+    color: #008000 !important;
+}

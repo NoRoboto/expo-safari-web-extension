@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuickTranslate Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: -20px -20px 40px -20px;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+        
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #e53e3e;
+        }
+        
+        .status-message {
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        
+        .status-message.success {
+            background: #c6f6d5;
+            color: #276749;
+            border: 1px solid #9ae6b4;
+        }
+        
+        .status-message.error {
+            background: #fed7d7;
+            color: #c53030;
+            border: 1px solid #feb2b2;
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        .shortcut-display {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 12px;
+            color: #4a5568;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        
+        .stat-card {
+            background: #f7fafc;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 4px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>QuickTranslate</h1>
+            <p>Configure your translation preferences and settings</p>
+        </div>
+
+        <div id="statusMessage" class="status-message"></div>
+
+        <!-- Language Preferences -->
+        <div class="section">
+            <h2>Language Preferences</h2>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="defaultFromLang">Default Source Language</label>
+                    <select id="defaultFromLang">
+                        <option value="auto">Auto-detect</option>
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="it">Italian</option>
+                        <option value="pt">Portuguese</option>
+                        <option value="ru">Russian</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                    <div class="help-text">Language to translate from by default</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="defaultToLang">Default Target Language</label>
+                    <select id="defaultToLang">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                        <option value="it">Italian</option>
+                        <option value="pt">Portuguese</option>
+                        <option value="ru">Russian</option>
+                        <option value="ja">Japanese</option>
+                        <option value="ko">Korean</option>
+                        <option value="zh">Chinese</option>
+                    </select>
+                    <div class="help-text">Your preferred translation language</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Translation Behavior -->
+        <div class="section">
+            <h2>Translation Behavior</h2>
+            
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="autoTranslate">
+                    <label for="autoTranslate">Auto-translate while typing</label>
+                </div>
+                <div class="help-text">Automatically translate text as you type (with a short delay)</div>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showPopup">
+                    <label for="showPopup">Show translation popup on text selection</label>
+                </div>
+                <div class="help-text">Display a small popup when you select text on web pages</div>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enableCache">
+                    <label for="enableCache">Cache translations</label>
+                </div>
+                <div class="help-text">Store translations locally for faster access</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="translationDelay">Auto-translation delay (milliseconds)</label>
+                <input type="number" id="translationDelay" min="500" max="5000" step="100" value="1000">
+                <div class="help-text">How long to wait after typing before auto-translating</div>
+            </div>
+        </div>
+
+        <!-- Keyboard Shortcuts -->
+        <div class="section">
+            <h2>Keyboard Shortcuts</h2>
+            
+            <div class="form-group">
+                <label for="translateShortcut">Translate Selected Text</label>
+                <div class="shortcut-display">Ctrl+Shift+T (Cmd+Shift+T on Mac)</div>
+                <div class="help-text">Select text and use this shortcut to translate it quickly</div>
+            </div>
+        </div>
+
+        <!-- Translation Services -->
+        <div class="section">
+            <h2>Translation Services</h2>
+            
+            <div class="form-group">
+                <label for="primaryService">Primary Translation Service</label>
+                <select id="primaryService">
+                    <option value="mymemory">MyMemory (Free, no setup required)</option>
+                    <option value="libretranslate">LibreTranslate (Free, open source)</option>
+                    <option value="microsoft">Microsoft Translator (Requires API key)</option>
+                </select>
+                <div class="help-text">Choose which translation service to use first</div>
+            </div>
+            
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="enableFallback" checked>
+                    <label for="enableFallback">Enable fallback services</label>
+                </div>
+                <div class="help-text">Try other services if the primary one fails</div>
+            </div>
+        </div>
+
+        <!-- Usage Statistics -->
+        <div class="section">
+            <h2>Usage Statistics</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalTranslations">0</div>
+                    <div class="stat-label">Total Translations</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="todayTranslations">0</div>
+                    <div class="stat-label">Today</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="cacheSize">0</div>
+                    <div class="stat-label">Cached Items</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="favoriteLanguage">-</div>
+                    <div class="stat-label">Most Used Language</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="button-group">
+            <button class="btn btn-danger" id="clearCache">Clear Cache</button>
+            <button class="btn btn-secondary" id="resetSettings">Reset to Defaults</button>
+            <button class="btn btn-primary" id="saveSettings">Save Settings</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSettings();
+            loadStats();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            document.getElementById('saveSettings').addEventListener('click', saveSettings);
+            document.getElementById('resetSettings').addEventListener('click', resetSettings);
+            document.getElementById('clearCache').addEventListener('click', clearCache);
+        }
+
+        function loadSettings() {
+            browser.storage.local.get([
+                'defaultFromLang',
+                'defaultToLang', 
+                'autoTranslate',
+                'showPopup',
+                'enableCache',
+                'translationDelay',
+                'primaryService',
+                'enableFallback'
+            ], function(result) {
+                document.getElementById('defaultFromLang').value = result.defaultFromLang || 'auto';
+                document.getElementById('defaultToLang').value = result.defaultToLang || 'es';
+                document.getElementById('autoTranslate').checked = result.autoTranslate !== false;
+                document.getElementById('showPopup').checked = result.showPopup !== false;
+                document.getElementById('enableCache').checked = result.enableCache !== false;
+                document.getElementById('translationDelay').value = result.translationDelay || 1000;
+                document.getElementById('primaryService').value = result.primaryService || 'mymemory';
+                document.getElementById('enableFallback').checked = result.enableFallback !== false;
+            });
+        }
+
+        function loadStats() {
+            browser.storage.local.get([
+                'translationStats',
+                'translationCache'
+            ], function(result) {
+                const stats = result.translationStats || {
+                    total: 0,
+                    today: 0,
+                    languages: {}
+                };
+
+                document.getElementById('totalTranslations').textContent = stats.total || 0;
+                document.getElementById('todayTranslations').textContent = stats.today || 0;
+                
+                const cacheSize = result.translationCache ? Object.keys(result.translationCache).length : 0;
+                document.getElementById('cacheSize').textContent = cacheSize;
+
+                const favoriteLanguage = stats.languages ? 
+                    Object.keys(stats.languages).reduce((a, b) => 
+                        stats.languages[a] > stats.languages[b] ? a : b, '-') : '-';
+                document.getElementById('favoriteLanguage').textContent = favoriteLanguage;
+            });
+        }
+
+        function saveSettings() {
+            const settings = {
+                defaultFromLang: document.getElementById('defaultFromLang').value,
+                defaultToLang: document.getElementById('defaultToLang').value,
+                autoTranslate: document.getElementById('autoTranslate').checked,
+                showPopup: document.getElementById('showPopup').checked,
+                enableCache: document.getElementById('enableCache').checked,
+                translationDelay: parseInt(document.getElementById('translationDelay').value),
+                primaryService: document.getElementById('primaryService').value,
+                enableFallback: document.getElementById('enableFallback').checked
+            };
+
+            browser.storage.local.set(settings, function() {
+                showStatus('Settings saved successfully!', 'success');
+            });
+        }
+
+        function resetSettings() {
+            if (confirm('Are you sure you want to reset all settings to defaults?')) {
+                browser.storage.local.remove([
+                    'defaultFromLang',
+                    'defaultToLang',
+                    'autoTranslate', 
+                    'showPopup',
+                    'enableCache',
+                    'translationDelay',
+                    'primaryService',
+                    'enableFallback'
+                ], function() {
+                    loadSettings();
+                    showStatus('Settings reset to defaults', 'success');
+                });
+            }
+        }
+
+        function clearCache() {
+            if (confirm('Are you sure you want to clear the translation cache?')) {
+                browser.storage.local.remove(['translationCache'], function() {
+                    loadStats();
+                    showStatus('Translation cache cleared', 'success');
+                });
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = `status-message ${type}`;
+            statusEl.style.display = 'block';
+
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

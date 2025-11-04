@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dashPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="2" height="2" fill="#ffffff"/>
+      <rect x="2" y="2" width="2" height="2" fill="#ffffff"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="200" fill="url(#logoGradient)" stroke="#ffffff" stroke-width="2" stroke-dasharray="4,4"/>
+  
+  <!-- Main logo frame -->
+  <rect x="20" y="20" width="160" height="160" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Media symbols -->
+  <g stroke="#ffffff" stroke-width="2" fill="none">
+    <!-- Play triangle -->
+    <polygon points="60,60 60,100 90,80" fill="#ffffff"/>
+    
+    <!-- Pause bars -->
+    <rect x="110" y="60" width="8" height="40" fill="#ffffff"/>
+    <rect x="125" y="60" width="8" height="40" fill="#ffffff"/>
+    
+    <!-- Audio waves -->
+    <path d="M50,120 Q70,110 70,130 Q70,150 50,140" stroke-width="1"/>
+    <path d="M55,125 Q65,120 65,135 Q65,145 55,140" stroke-width="1"/>
+    
+    <!-- Image frame -->
+    <rect x="100" y="110" width="40" height="30" stroke-width="1"/>
+    <circle cx="110" cy="120" r="3" fill="#ffffff"/>
+    <polygon points="105,135 115,125 125,130 135,120 135,135" fill="#ffffff"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="100" y="165" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff">MEDIA</text>
+  <text x="100" y="180" text-anchor="middle" font-family="monospace" font-size="12" fill="#ffffff">SHOWCASE</text>
+  
+  <!-- Corner decorations -->
+  <rect x="15" y="15" width="10" height="10" fill="url(#dashPattern)"/>
+  <rect x="175" y="15" width="10" height="10" fill="url(#dashPattern)"/>
+  <rect x="15" y="175" width="10" height="10" fill="url(#dashPattern)"/>
+  <rect x="175" y="175" width="10" height="10" fill="url(#dashPattern)"/>
+</svg>

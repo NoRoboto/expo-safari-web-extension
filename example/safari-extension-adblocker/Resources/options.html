@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AdBlock Pro Options</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            color: black;
+        }
+        
+        h1 {
+            border-bottom: 2px dashed black;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            border: 1px dashed black;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 200px;
+            font-family: monospace;
+            font-size: 11px;
+            border: 1px dashed black;
+            padding: 10px;
+            resize: vertical;
+        }
+        
+        button {
+            background: white;
+            color: black;
+            border: 1px dashed black;
+            padding: 10px 15px;
+            font-family: monospace;
+            font-size: 11px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+        
+        button:hover {
+            background: #f0f0f0;
+        }
+        
+        .stats {
+            background: #f9f9f9;
+            padding: 10px;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <h1>adblock pro options</h1>
+    
+    <div class="section">
+        <h3>blocking settings</h3>
+        <label>
+            <input type="checkbox" id="block-ads" checked>
+            block advertisements
+        </label>
+        <label>
+            <input type="checkbox" id="block-social" checked>
+            block social widgets
+        </label>
+        <label>
+            <input type="checkbox" id="block-tracking" checked>
+            block tracking scripts
+        </label>
+        <label>
+            <input type="checkbox" id="block-popups" checked>
+            block popups
+        </label>
+    </div>
+    
+    <div class="section">
+        <h3>custom filters</h3>
+        <p>add custom filter rules (one per line):</p>
+        <textarea id="custom-filters" placeholder="example:
+##.custom-ad-class
+||example-ads.com^
+###annoying-popup"></textarea>
+        <br><br>
+        <button id="save-filters">save filters</button>
+        <button id="reset-filters">reset to default</button>
+    </div>
+    
+    <div class="section">
+        <h3>statistics</h3>
+        <div class="stats" id="stats">
+            loading statistics...
+        </div>
+        <button id="clear-stats">clear statistics</button>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "extension": {
+    "name": "Media Showcase Pro",
+    "version": "4.7.3",
+    "type": "Safari Web Extension",
+    "features": [
+      "Audio playback",
+      "Video streaming", 
+      "Image display",
+      "Font loading",
+      "Data parsing",
+      "SVG rendering"
+    ]
+  },
+  "testData": {
+    "supportedFormats": {
+      "audio": ["mp3", "wav", "aac"],
+      "video": ["mp4", "webm", "mov"],
+      "images": ["jpg", "png", "gif", "svg"],
+      "fonts": ["ttf", "woff", "woff2"],
+      "data": ["json", "csv", "xml"]
+    },
+    "sampleMetrics": {
+      "filesProcessed": 1247,
+      "totalSize": "45.7MB",
+      "lastUpdate": "2024-10-02T21:15:00Z"
+    }
+  },
+  "bundleTest": {
+    "status": "active",
+    "allFilesAccessible": true,
+    "pluginWorking": true
+  }
+}

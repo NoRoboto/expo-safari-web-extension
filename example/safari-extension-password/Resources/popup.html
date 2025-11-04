@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 320px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            background: white;
+            color: black;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 1px dashed black;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .status {
+            border: 1px dashed black;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            font-size: 11px;
+        }
+        
+        .locked {
+            text-align: center;
+            color: #ff0000;
+        }
+        
+        .unlocked {
+            color: #008000;
+        }
+        
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        button {
+            background: white;
+            color: black;
+            border: 1px dashed black;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 11px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-align: left;
+        }
+        
+        button:hover {
+            background: #f0f0f0;
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .credentials-list {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px dashed #ccc;
+            margin: 10px 0;
+        }
+        
+        .credential-item {
+            padding: 8px;
+            border-bottom: 1px dashed #eee;
+            font-size: 10px;
+            cursor: pointer;
+        }
+        
+        .credential-item:hover {
+            background: #f0f0f0;
+        }
+        
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+        
+        .site-info {
+            font-size: 10px;
+            color: #666;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3 data-i18n="extensionName">securepass manager</h3>
+    </div>
+    
+    <div class="site-info" id="site-info">
+        current site: <span id="current-site">-</span>
+    </div>
+    
+    <div class="status" id="status-container">
+        <div id="locked-view" style="display: none;">
+            <div class="locked">vault is locked</div>
+            <button id="unlock-btn" data-i18n="unlock">unlock vault</button>
+        </div>
+        
+        <div id="unlocked-view" style="display: none;">
+            <div class="unlocked">
+                vault unlocked<br>
+                credentials: <span id="credential-count">0</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="actions" id="actions-container" style="display: none;">
+        <button id="fill-form-btn">→ fill login form</button>
+        <button id="generate-password-btn">⚡ generate password</button>
+        <button id="save-current-btn">💾 save current form</button>
+        
+        <div class="credentials-list" id="credentials-list" style="display: none;">
+            <!-- Credentials will be populated here -->
+        </div>
+        
+        <hr style="border: none; border-top: 1px dashed #ccc; margin: 10px 0;">
+        
+        <button id="lock-btn" data-i18n="lock">🔒 lock vault</button>
+        <button id="settings-btn" data-i18n="settings">⚙️ settings</button>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

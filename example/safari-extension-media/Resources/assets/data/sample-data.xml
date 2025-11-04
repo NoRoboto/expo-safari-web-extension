@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<media_library>
+  <videos>
+    <video id="demo1" format="mp4" duration="120" size="1920x1080">
+      <title>Demo Video 1</title>
+      <description>Sample video for testing</description>
+      <tags>demo,test,showcase</tags>
+    </video>
+    <video id="demo2" format="webm" duration="60" size="1280x720">
+      <title>Demo Video 2</title>
+      <description>Another test video</description>
+      <tags>demo,webm,hd</tags>
+    </video>
+  </videos>
+  
+  <audio>
+    <track id="sample1" format="mp3" duration="180" bitrate="320">
+      <title>Sample Audio Track</title>
+      <artist>Test Artist</artist>
+      <album>Demo Album</album>
+    </track>
+    <track id="sample2" format="wav" duration="240" bitrate="1411">
+      <title>High Quality Audio</title>
+      <artist>Demo Artist</artist>
+      <album>Test Collection</album>
+    </track>
+  </audio>
+  
+  <images>
+    <image id="img1" format="png" resolution="1920x1080" size="2.5MB">
+      <title>Demo Image 1</title>
+      <category>landscape</category>
+    </image>
+    <image id="img2" format="jpg" resolution="3840x2160" size="8.1MB">
+      <title>Demo Image 2</title>
+      <category>portrait</category>
+    </image>
+  </images>
+</media_library>

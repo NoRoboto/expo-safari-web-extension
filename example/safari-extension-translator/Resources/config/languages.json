@@ -1,0 +1,86 @@
+{
+  "languages": {
+    "auto": {
+      "name": "Auto-detect",
+      "native": "Auto-detect",
+      "code": "auto"
+    },
+    "en": {
+      "name": "English",
+      "native": "English",
+      "code": "en"
+    },
+    "es": {
+      "name": "Spanish",
+      "native": "Español",
+      "code": "es"
+    },
+    "fr": {
+      "name": "French", 
+      "native": "Français",
+      "code": "fr"
+    },
+    "de": {
+      "name": "German",
+      "native": "Deutsch",
+      "code": "de"
+    },
+    "it": {
+      "name": "Italian",
+      "native": "Italiano", 
+      "code": "it"
+    },
+    "pt": {
+      "name": "Portuguese",
+      "native": "Português",
+      "code": "pt"
+    },
+    "ru": {
+      "name": "Russian",
+      "native": "Русский",
+      "code": "ru"
+    },
+    "ja": {
+      "name": "Japanese",
+      "native": "日本語",
+      "code": "ja"
+    },
+    "ko": {
+      "name": "Korean",
+      "native": "한국어",
+      "code": "ko"
+    },
+    "zh": {
+      "name": "Chinese",
+      "native": "中文",
+      "code": "zh"
+    },
+    "ar": {
+      "name": "Arabic",
+      "native": "العربية",
+      "code": "ar"
+    },
+    "hi": {
+      "name": "Hindi",
+      "native": "हिन्दी",
+      "code": "hi"
+    }
+  },
+  
+  "popular": ["en", "es", "fr", "de", "it", "pt", "ru", "ja", "ko", "zh"],
+  
+  "detection_patterns": {
+    "en": ["the", "and", "or", "but", "in", "on", "at", "to", "for"],
+    "es": ["el", "la", "de", "que", "y", "a", "en", "un", "es", "se"],
+    "fr": ["le", "de", "et", "à", "un", "il", "être", "et", "en", "avoir"],
+    "de": ["der", "die", "und", "in", "den", "von", "zu", "das", "mit", "sich"],
+    "it": ["il", "di", "che", "e", "la", "per", "una", "in", "con", "da"],
+    "pt": ["o", "de", "que", "e", "do", "da", "em", "um", "para", "é"],
+    "ru": ["в", "и", "не", "на", "я", "быть", "с", "а", "как", "из"],
+    "ja": ["の", "に", "は", "を", "た", "が", "で", "て", "と", "し"],
+    "ko": ["이", "의", "가", "을", "에", "는", "와", "한", "로", "으로"],
+    "zh": ["的", "一", "是", "在", "不", "了", "有", "和", "人", "这"],
+    "ar": ["في", "من", "إلى", "على", "هذا", "أن", "كان", "قد", "لا", "ما"],
+    "hi": ["के", "में", "की", "और", "को", "है", "से", "का", "पर", "एक"]
+  }
+}

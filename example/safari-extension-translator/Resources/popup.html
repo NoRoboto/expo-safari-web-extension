@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuickTranslate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 350px;
+            min-height: 400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        .language-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            align-items: center;
+        }
+        
+        .language-selector select {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        .swap-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        
+        .swap-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .text-areas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .text-group label {
+            font-size: 12px;
+            font-weight: 500;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .text-group textarea {
+            resize: none;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 14px;
+            line-height: 1.4;
+            font-family: inherit;
+        }
+        
+        .input-text {
+            height: 100px;
+        }
+        
+        .output-text {
+            height: 100px;
+            background: #f8f9fa;
+            color: #333;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .btn-secondary:hover {
+            background: #cbd5e0;
+        }
+        
+        .status {
+            margin-top: 12px;
+            padding: 8px;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        .status.loading {
+            background: #bee3f8;
+            color: #2c5282;
+        }
+        
+        .status.success {
+            background: #c6f6d5;
+            color: #276749;
+        }
+        
+        .status.error {
+            background: #fed7d7;
+            color: #c53030;
+        }
+        
+        .quick-actions {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .quick-actions h3 {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+        
+        .quick-btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 4px;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            text-align: left;
+            font-size: 12px;
+            color: #4a5568;
+            cursor: pointer;
+        }
+        
+        .quick-btn:hover {
+            background: #edf2f7;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>QuickTranslate</h1>
+        <div style="font-size: 11px; opacity: 0.8; margin-top: 4px;">Demo Version - Limited Functionality</div>
+    </div>
+    
+    <div class="container">
+        <div class="language-selector">
+            <select id="fromLang">
+                <option value="auto">Detect Language</option>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ru">Russian</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh">Chinese</option>
+            </select>
+            
+            <button class="swap-btn" id="swapBtn" title="Swap languages">⇄</button>
+            
+            <select id="toLang">
+                <option value="en">English</option>
+                <option value="es" selected>Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="ru">Russian</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh">Chinese</option>
+            </select>
+        </div>
+        
+        <div class="text-areas">
+            <div class="text-group">
+                <label for="inputText">Text to translate</label>
+                <textarea id="inputText" class="input-text" placeholder="Enter text to translate..."></textarea>
+            </div>
+            
+            <div class="text-group">
+                <label for="outputText">Translation</label>
+                <textarea id="outputText" class="output-text" placeholder="Translation will appear here..." readonly></textarea>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="btn btn-primary" id="translateBtn">Translate</button>
+            <button class="btn btn-secondary" id="copyBtn">Copy</button>
+            <button class="btn btn-secondary" id="clearBtn">Clear</button>
+        </div>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <button class="quick-btn" id="translateSelection">Translate Selected Text</button>
+            <button class="quick-btn" id="translatePage">Translate Page (Demo)</button>
+            <button class="quick-btn" id="openOptions">Settings</button>
+        </div>
+        
+        <div style="margin-top: 16px; padding: 12px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 6px; font-size: 11px; color: #856404;">
+            <strong>📝 Demo Notice:</strong> This is a placeholder translation service. 
+            Real implementations would integrate with APIs like Google Translate, DeepL, or Azure Translator.
+            <br><br>
+            <strong>Current features:</strong> Basic word translation (EN↔ES, EN→FR/DE) + Lorem ipsum for unknown text.
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

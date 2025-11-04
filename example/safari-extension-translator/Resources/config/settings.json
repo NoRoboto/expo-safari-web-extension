@@ -1,0 +1,64 @@
+{
+  "default_settings": {
+    "source_language": "auto",
+    "target_language": "en",
+    "auto_detect": true,
+    "show_original": true,
+    "translation_service": "mymemory",
+    "popup_position": "cursor",
+    "popup_delay": 500,
+    "min_selection_length": 3,
+    "max_selection_length": 5000,
+    "enable_shortcuts": true,
+    "enable_context_menu": true,
+    "enable_double_click": false,
+    "cache_translations": true,
+    "cache_duration": 86400000
+  },
+  
+  "translation_services": {
+    "mymemory": {
+      "name": "MyMemory",
+      "url": "https://api.mymemory.translated.net/get",
+      "free": true,
+      "rate_limit": 100,
+      "supports_detection": true
+    },
+    "google": {
+      "name": "Google Translate",
+      "url": "https://translate.googleapis.com/translate_a/single",
+      "free": false,
+      "rate_limit": 1000,
+      "supports_detection": true
+    }
+  },
+  
+  "ui_themes": {
+    "light": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "border": "#cccccc",
+      "accent": "#007bff"
+    },
+    "dark": {
+      "background": "#2d2d2d",
+      "text": "#ffffff", 
+      "border": "#555555",
+      "accent": "#66b3ff"
+    },
+    "minimal": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "border": "#000000",
+      "accent": "#000000"
+    }
+  },
+  
+  "keyboard_shortcuts": {
+    "translate": "Ctrl+Shift+T",
+    "swap_languages": "Ctrl+Shift+S",
+    "copy_translation": "Ctrl+Shift+C",
+    "speak_original": "Ctrl+Shift+O",
+    "speak_translation": "Ctrl+Shift+P"
+  }
+}

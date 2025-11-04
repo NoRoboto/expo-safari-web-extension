@@ -1,0 +1,52 @@
+/* AdBlock Pro Content Styles */
+
+/* Hide common ad containers */
+.advertisement,
+.ad-banner,
+.ads,
+[id*="advertisement"],
+[class*="ad-"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* Block social widgets */
+.fb-like-box,
+.twitter-widget,
+.social-share {
+    display: none !important;
+}
+
+/* Anti-adblock message override */
+.adblock-notice,
+.please-disable-adblock {
+    display: none !important;
+}
+
+/* Popup and overlay protection */
+.popup-overlay,
+.modal-backdrop,
+.overlay-ad {
+    display: none !important;
+}
+
+/* Video ad protection */
+.video-ad-container,
+.video-advertisement,
+.preroll-ad {
+    display: none !important;
+}
+
+/* AdBlock Pro indicator */
+.adblock-pro-blocked::before {
+    content: "[BLOCKED]";
+    color: #ff0000;
+    font-family: monospace;
+    font-size: 10px;
+    background: white;
+    border: 1px dashed red;
+    padding: 2px 4px;
+}

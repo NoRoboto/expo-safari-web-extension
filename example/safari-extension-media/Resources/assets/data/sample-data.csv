@@ -1,0 +1,11 @@
+file_type,extension,size_mb,status,test_result
+audio,wav,2.1,bundled,pass
+video,mp4,5.7,bundled,pass
+image,jpg,0.8,bundled,pass
+image,png,1.2,bundled,pass
+font,ttf,0.3,bundled,pass
+font,woff2,0.2,bundled,pass
+data,json,0.1,bundled,pass
+data,csv,0.05,bundled,pass
+data,xml,0.15,bundled,pass
+graphics,svg,0.02,bundled,pass

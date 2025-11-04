@@ -1,0 +1,32 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="56" fill="url(#grad)" />
+  
+  <!-- Speech bubble 1 -->
+  <rect x="20" y="35" width="32" height="20" rx="6" fill="white" opacity="0.9"/>
+  <polygon points="28,55 34,62 40,55" fill="white" opacity="0.9"/>
+  
+  <!-- Speech bubble 2 -->
+  <rect x="76" y="70" width="32" height="20" rx="6" fill="white" opacity="0.9"/>
+  <polygon points="88,70 94,63 100,70" fill="white" opacity="0.9"/>
+  
+  <!-- Translation arrows -->
+  <path d="M 45 50 L 55 45 L 55 48 L 70 48 L 70 52 L 55 52 L 55 55 Z" fill="white"/>
+  <path d="M 83 75 L 73 80 L 73 77 L 58 77 L 58 73 L 73 73 L 73 70 Z" fill="white"/>
+  
+  <!-- Text lines in bubbles -->
+  <line x1="24" y1="40" x2="48" y2="40" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="45" x2="44" y2="45" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+  <line x1="24" y1="50" x2="40" y2="50" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+  
+  <line x1="80" y1="75" x2="104" y2="75" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="80" x2="100" y2="80" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="85" x2="96" y2="85" stroke="#667eea" stroke-width="2" stroke-linecap="round"/>
+</svg>
