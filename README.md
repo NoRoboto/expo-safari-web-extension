@@ -85,9 +85,24 @@ The plugin automatically handles file type detection for Xcode. See the [complet
 - Xcode 15.0+
 - Apple Developer Account (for device testing)
 
-## Example
+## Examples
 
 See the [example app](example/) for a complete implementation.
+
+**To test different extension types**, change `extensionSourcePath` in `example/app.json`:
+
+<div align="center">
+  <img src="docs/examples/example-0.gif" width="180" height="390" alt="Basic Extension" />
+  <img src="docs/examples/example-1.gif" width="180" height="390" alt="Media Extension" />
+  <img src="docs/examples/example-2.gif" width="180" height="390" alt="Password Extension" />
+  <img src="docs/examples/example-3.gif" width="180" height="390" alt="Translator Extension" />
+</div>
+
+- **Basic**: `"./safari-extension"`
+- **Media**: `"./safari-extension-media"` 
+- **Password**: `"./safari-extension-password"`
+- **Translator**: `"./safari-extension-translator"`
+- **AdBlocker**: `"./safari-extension-adblocker"`
 
 ## Testing
 
@@ -98,6 +113,14 @@ See the [example app](example/) for a complete implementation.
 5. Enable extension in iOS Settings → Safari → Extensions
 
 For detailed testing instructions, see [TESTING.md](TESTING.md).
+
+## Troubleshooting
+
+**Extension not showing after build?** You need:
+- Code signing configured for BOTH app and extension targets in Xcode
+- Apple Developer Account 
+- Run on physical device (extensions don't work in simulator)
+- Enable extension in iOS Settings → Safari → Extensions → Your App
 
 ## License
 
