@@ -119,7 +119,6 @@ For detailed testing instructions, see [TESTING.md](TESTING.md).
 **Extension not showing after build?** You need:
 - Code signing configured for BOTH app and extension targets in Xcode
 - Apple Developer Account 
-- Run on physical device (extensions don't work in simulator)
 - Enable extension in iOS Settings → Safari → Extensions → Your App
 
 ## License
