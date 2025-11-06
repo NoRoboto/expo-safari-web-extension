@@ -1,6 +1,6 @@
 {
   "name": "expo-safari-web-extension",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Expo config plugin for creating Safari Web Extension targets with automatic Xcode project configuration and file management",
   "main": "./lib/commonjs/index.js",
   "types": "./lib/typescript/commonjs/src/index.d.ts",
